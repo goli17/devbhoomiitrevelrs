@@ -6,6 +6,11 @@ import Image from "next/image"
 
 const heroSlides = [
   {
+    image: "/images/chardham.jpg",
+    title: "Complete Char Dham Yatra",
+    subtitle: "Experience the Sacred Journey",
+  },
+  {
     image: "/images/kedarnath.jpg",
     title: "Sacred Kedarnath Yatra",
     subtitle: "Experience Divine Blessings",
@@ -97,7 +102,7 @@ export function MobileFirstHero() {
             </p>
 
             {/* Trust Indicators */}
-            <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8 mb-8 md:mb-10">
+            <div className="flex flex-wrap justify-center items-center gap-2 md:gap-6 mb-6 md:mb-8">
               <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-3 py-2 rounded-full">
                 <Star className="text-yellow-400 fill-current" size={16} />
                 <span className="text-sm md:text-base font-semibold">4.9/5 Rating</span>
@@ -130,7 +135,7 @@ export function MobileFirstHero() {
             </div>
 
             {/* Special Offer Banner */}
-            <div className="mt-8 md:mt-10">
+            <div className="mt-6 md:mt-8">
               <div className="bg-gradient-to-r from-orange-600 to-red-600 text-white px-4 py-3 rounded-lg inline-block">
                 <p className="text-sm md:text-base font-semibold">
                   🎉 Early Bird Offer: Save ₹2,000 - Book Before March 31st!
@@ -142,7 +147,7 @@ export function MobileFirstHero() {
       </div>
 
       {/* Slide Indicators */}
-      <div className="absolute bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 z-20 flex space-x-2">
+      <div className="absolute bottom-2 md:bottom-2 left-1/2 -translate-x-1/2 z-20 flex space-x-2">
         {heroSlides.map((_, index) => (
           <button
             key={index}
