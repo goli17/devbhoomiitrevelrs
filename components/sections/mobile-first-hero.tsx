@@ -6,18 +6,23 @@ import Image from "next/image"
 
 const heroSlides = [
   {
-    image: "/images/kedarnath-temple.jpg",
+    image: "/images/kedarnath.jpg",
     title: "Sacred Kedarnath Yatra",
     subtitle: "Experience Divine Blessings",
   },
   {
-    image: "/images/badrinath-temple.jpg",
+    image: "/images/badrinath.jpg",
     title: "Holy Badrinath Darshan",
     subtitle: "Journey to Lord Vishnu",
   },
   {
-    image: "/images/gangotri-temple.jpg",
+    image: "/images/gangotri.jpeg",
     title: "Blessed Gangotri Pilgrimage",
+    subtitle: "Source of Sacred Ganga",
+  },
+  {
+    image: "/images/yamunotri.jpg",
+    title: "Blessed Yamunotri Pilgrimage",
     subtitle: "Source of Sacred Ganga",
   },
 ]
@@ -36,7 +41,7 @@ export function MobileFirstHero() {
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length)
 
   return (
-    <section className="relative h-screen min-h-[600px] overflow-hidden">
+    <section className="relative h-screen max-h-[40vh] min-h-[600px] overflow-hidden">
       {/* Background Slider */}
       <div className="absolute inset-0">
         {heroSlides.map((slide, index) => (
@@ -50,7 +55,7 @@ export function MobileFirstHero() {
               src={slide.image || "/placeholder.svg"}
               alt={slide.title}
               fill
-              className="object-cover"
+              className="object-fit"
               priority={index === 0}
             />
             <div className="absolute inset-0 bg-black/50" />
