@@ -1,10 +1,10 @@
-import { createServerClient } from "@/lib/supabase"
+import { createServerSupabaseServer } from "@/app/superbase/server"
 import Link from "next/link"
 import { Clock, Star, ArrowRight } from "lucide-react"
 import Image from "next/image"
 
 export default async function PackagesSection() {
-  const supabase = createServerClient()
+  const supabase = createServerSupabaseServer()
 
   const { data: packages } = await supabase
     .from("packages")

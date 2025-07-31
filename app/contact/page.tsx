@@ -7,7 +7,7 @@ import Header from "@/components/header"
 import Footer from "@/components/footer"
 import WhatsAppFloat from "@/components/whatsapp-float"
 import { Phone, Mail, MapPin, Clock, Send } from "lucide-react"
-import { createClient } from "@/lib/supabase"
+import { createClientSupabaseClient } from "@/app/superbase/client"
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -24,7 +24,7 @@ export default function ContactPage() {
     setSubmitStatus("idle")
 
     try {
-      const supabase = createClient()
+      const supabase = createClientSupabaseClient()
       const { error } = await supabase.from("contact_messages").insert([formData])
 
       if (error) throw error

@@ -1,11 +1,11 @@
-import { createServerClient } from "@/lib/supabase"
+import { createServerSupabaseServer } from "@/app/superbase/server"
 import { Clock, Star, ArrowRight, MapPin } from "lucide-react"
 import Image from "next/image"
 import InteractiveButton from "@/components/ui/interactive-button"
 import GradientCard from "@/components/ui/gradient-card"
 
 export default async function EnhancedPackagesSection() {
-  const supabase = createServerClient()
+  const supabase = createServerSupabaseServer()
 
   const { data: packages } = await supabase
     .from("packages")

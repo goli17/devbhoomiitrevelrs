@@ -1,4 +1,4 @@
-import { createServerClient } from "@/lib/supabase"
+import { createServerSupabaseServer } from "@/app/superbase/server"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import WhatsAppFloat from "@/components/whatsapp-float"
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 }
 
 export default async function PackagesPage() {
-  const supabase = createServerClient()
+  const supabase = createServerSupabaseServer()
 
   const { data: packages } = await supabase
     .from("packages")

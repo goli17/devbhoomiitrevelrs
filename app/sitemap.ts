@@ -1,8 +1,8 @@
-import { createServerClient } from "@/lib/supabase"
+import { createClientSupabaseClient } from "@/app/superbase/client"
 import type { MetadataRoute } from "next"
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const supabase = createServerClient()
+  const supabase = createClientSupabaseClient()
 
   // Get all active packages
   const { data: packages } = await supabase.from("packages").select("slug, updated_at").eq("active", true)

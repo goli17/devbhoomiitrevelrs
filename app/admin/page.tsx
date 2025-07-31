@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
-import { createClient } from "@/lib/supabase"
+import { createClientSupabaseClient } from "@/app/superbase/client"
 import { Package, MessageSquare, Users, TrendingUp } from "lucide-react"
 
 export default function AdminDashboard() {
@@ -15,7 +15,7 @@ export default function AdminDashboard() {
     unreadMessages: 0,
   })
   const router = useRouter()
-  const supabase = createClient()
+  const supabase = createClientSupabaseClient()
 
   useEffect(() => {
     checkUser()

@@ -1,4 +1,4 @@
-import { createServerClient } from "@/lib/supabase"
+import { createServerSupabaseServer } from "@/app/superbase/server"
 import { notFound } from "next/navigation"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
@@ -14,7 +14,7 @@ interface Props {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const supabase = createServerClient()
+  const supabase = createServerSupabaseServer()
   const { data: pkg } = await supabase.from("packages").select("*").eq("slug", params.slug).eq("active", true).single()
 
   if (!pkg) {

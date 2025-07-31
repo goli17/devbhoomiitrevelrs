@@ -1,9 +1,9 @@
-import { createServerClient } from "@/lib/supabase"
+import { createServerSupabaseServer } from "@/app/superbase/server"
 import { Star, Quote } from "lucide-react"
 import Image from "next/image"
 
 export default async function TestimonialsSection() {
-  const supabase = createServerClient()
+  const supabase = createServerSupabaseServer()
 
   const { data: testimonials } = await supabase
     .from("testimonials")

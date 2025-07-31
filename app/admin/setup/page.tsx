@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { useState } from "react"
-import { createClient } from "@/lib/supabase"
+import { createClientSupabaseClient } from "@/app/superbase/client"
 import { Eye, EyeOff, User, Mail, Lock, Shield } from "lucide-react"
 
 export default function AdminSetup() {
@@ -14,7 +14,7 @@ export default function AdminSetup() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState("")
   const [success, setSuccess] = useState("")
-  const supabase = createClient()
+  const supabase = createClientSupabaseClient()
 
   const handleCreateAdmin = async (e: React.FormEvent) => {
     e.preventDefault()

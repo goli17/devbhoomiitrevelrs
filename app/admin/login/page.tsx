@@ -4,7 +4,7 @@ import type React from "react"
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
-import { createClient } from "@/lib/supabase"
+import { createClientSupabaseClient } from "@/app/superbase/client"
 import { Eye, EyeOff, Lock, Mail } from "lucide-react"
 
 export default function AdminLogin() {
@@ -14,7 +14,7 @@ export default function AdminLogin() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState("")
   const router = useRouter()
-  const supabase = createClient()
+  const supabase = createClientSupabaseClient()
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
